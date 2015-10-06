@@ -1,0 +1,1156 @@
+<%= form_for(@healthsurvey) do |f| %>
+  <% if @healthsurvey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@healthsurvey.errors.count, "error") %> prohibited this healthsurvey from being saved:</h2>
+
+      <ul>
+      <% @healthsurvey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <head>
+      <meta charset=utf-8 />
+      <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+      <meta name="viewport" content="width=device-width, height=device-height" />
+      <title>#CreatingHealth Survey</title>
+      <!--<link href="css/style.css" rel="stylesheet" />-->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <!--<script type="text/javascript" src="js/report.js"></script>-->
+  </head>
+
+  <body>
+  </script>
+  <form action="submit">
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </div>
+
+
+        <div id="question_one" class="question-container multi-select">
+          <h2>
+              How do you identify yourself within the healthcare system? If more than one apply, select multiple.
+          </h2>
+          <div class="field">
+            <div class="answer">
+              <%= f.check_box :patient1, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+              <p>Patient</p>
+            </div>
+            <div class="answer">
+              <%= f.check_box :insuranceProvider1, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+              <p>Insurance Provider</p>
+            </div>
+            <div class="answer">
+              <%= f.check_box :hospitalAdministrator1, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+              <p>Hospital Administrator</p>
+            </div>
+            <div class="answer">
+              <%= f.check_box :clincian1, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+              <p>Clinician (physician providers / small practices)</p>
+            </div>
+            <div class="answer">
+              <%= f.check_box :physician1, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+              <p>Physician (the individual doctors / providers)</p>
+            </div>
+            <div class="answer">
+              <%= f.check_box :policymaker1, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+              <p>Policymaker</p>
+            </div>
+            <div class="answer">
+              <%= f.check_box :communityMember1, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+              <p>Community Member</p>
+            </div>
+            <div class="answer other-field">
+              <%= f.check_box :other1, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+              <p>Other</p>
+              <%= f.text_field :other1Response %>
+            </div>
+          </div>
+
+  </div>
+
+
+    <div id="question_two" class="question-container limited-multi-select">
+      <h2>
+        Which of these issues do you believe will most affect healthcare? Choose three.
+      </h2>
+      <div class="field">
+        <div class="answer">
+          <%= f.check_box :competition2, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+          <p>Competition between existing healthcare providers</p>
+        </div>
+        <div class="answer">
+          <%= f.check_box :lackOfEducation2, {:class => "myclass", :style => "mystyle"},  1,0 %>
+          <p>Lack of education</p>
+        </div>
+        <div class="answer">
+          <%= f.check_box :incongruentSystems2, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+          <p>Incongruent systems and loss of tracking</p>
+        </div>
+        <div class="answer">
+          <%= f.check_box :poorCommunication2, {:class => "myclass", :style => "mystyle"},  1,0 %>
+          <p>Poor communication and access between physicians and patients</p>
+        </div>
+        <div class="answer">
+          <%= f.check_box :diagnosticErrors2, {:class => "myclass", :style => "mystyle"},  1,0 %>
+          <p>Diagnostic errors and recurring malpractice</p>
+        </div>
+        <div class="answer">
+          <%= f.check_box :inefficientTracking2, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+          <p>Inefficient health tracking and lack of consistency</p>
+        </div>
+        <div class="answer">
+          <%= f.check_box :privacy2, {:class => "myclass", :style => "mystyle"},  1,0 %>
+          <p>Privacy and access to health records</p>
+        </div>
+        <div class="answer">
+          <%= f.check_box :valuebasedPaymentSystems2, {:class => "myclass", :style => "mystyle"},  1,0 %>
+          <p>Emerging value-based payment systems</p>
+        </div>
+        <div class="answer">
+          <%= f.check_box :disconnectBetweenSystems2, {:class => "myclass", :style => "mystyle"},  1,0 %>
+          <p>Disconnect between the public and health systems</p>
+        </div>
+        <div class="answer other-field">
+          <%= f.check_box :other2, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+          <p>Other</p>
+          <%= f.text_field :other2Response %>
+        </div>
+      </div>
+    </div>
+
+<!-- QUESTION 3-->
+      <div id="question_three" class="question-container matrix" >
+            <h2>
+                For each of the issues you identified, who is the most affected?
+            </h2>
+            <div id="matrix_one">
+                <h3 id="selection_q3_0"></h3>
+                <div class="answer">
+                  <%= f.radio_button :q3_1,  "patient" %>
+                  <p>Patient</p>
+                </div>
+                <div class="answer">
+                  <%= f.radio_button :q3_1,  "insuranceProvider" %>
+                  <p>Insurance Provider</p>
+                </div>
+                <div class="answer">
+                  <%= f.radio_button :q3_1, "hospitalAdministrator" %>
+                  <p>Hospital Administrator</p>
+                </div>
+                <div class="answer">
+                  <%= f.radio_button :q3_1, "clincian" %>
+                  <p>Clinician (physician providers / small practices)</p>
+                </div>
+                <div class="answer">
+                  <%= f.radio_button :q3_1, "physician" %>
+                  <p>Physician (the individual doctors / providers)</p>
+                </div>
+                <div class="answer">
+                  <%= f.radio_button :q3_1, "policymaker" %>
+                  <p>Policymaker</p>
+                </div>
+                <div class="answer">
+                  <%= f.radio_button :q3_1,  "communityMember"%>
+                  <p>Community Member</p>
+                </div>
+
+              </div>
+
+                <div id="matrix_two" >
+                    <h3 id="selection_q3_1"></h3>
+                    <div class="answer">
+                      <%= f.radio_button :q3_2,  "patient" %>
+                      <p>Patient</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :q3_2, "insuranceProvider"%>
+                      <p>Insurance Provider</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :q3_2, "hospitalAdministrator" %>
+                      <p>Hospital Administrator</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :q3_2,  "clincian" %>
+                      <p>Clinician (physician providers / small practices)</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :q3_2,  "physician" %>
+                      <p>Physician (the individual doctors / providers)</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :q3_2, "policymaker" %>
+                      <p>Policymaker</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :q3_2, "communityMember" %>
+                      <p>Community Member</p>
+                    </div>
+
+            </div>
+
+            <div id="matrix_three" >
+                <h3 id="selection_q3_2"></h3>
+                <div class="answer">
+                  <%= f.radio_button :q3_3,  "patient" %>
+                  <p>Patient</p>
+                </div>
+                <div class="answer">
+                  <%= f.radio_button :q3_3, "insuranceProvider" %>
+                  <p>Insurance Provider</p>
+                </div>
+                <div class="answer">
+                  <%= f.radio_button :q3_3, "hospitalAdministrator" %>
+                  <p>Hospital Administrator</p>
+                </div>
+                <div class="answer">
+                  <%= f.radio_button :q3_3, "clincian"%>
+                  <p>Clinician (physician providers / small practices)</p>
+                </div>
+                <div class="answer">
+                  <%= f.radio_button :q3_3,  "physician" %>
+                  <p>Physician (the individual doctors / providers)</p>
+                </div>
+                <div class="answer">
+                  <%= f.radio_button :q3_3, "policymaker" %>
+                  <p>Policymaker</p>
+                </div>
+                <div class="answer">
+                  <%= f.radio_button :q3_3,  "communityMember" %>
+                  <p>Community Member</p>
+                </div>
+
+              </div>
+          </div>
+
+<!-- QUESTION 4-->
+          <div id="question_four" class="question-container matrix" >
+                <h2>
+                    For each of the issues you identified, rate them on the following:
+                </h2>
+                <div id="matrix_one">
+                    <h3 id="selection_q4_0"></h3>
+<!-- ONE -->
+                  <div name="minimatrix">
+                    <h4>Increases Costs</h4>
+                    <div class="answer">
+
+                      <%= f.radio_button :incraesesCosts4_1,  "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :incraesesCosts4_1,  "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :incraesesCosts4_1,  "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :incraesesCosts4_1,  "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :incraesesCosts4_1,  "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+
+                  <div name="minimatrix">
+                    <h4>Decreases service availability</h4>
+                    <div class="answer">
+                      <!--<%= f.radio_button :q3_3, "clincian"%>-->
+                      <%= f.radio_button :decreasesAvailability4_1, "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesAvailability4_1, "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesAvailability4_1, "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesAvailability4_1, "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesAvailability4_1, "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+                <div name="minimatrix">
+                    <h4>Decreases service quality</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_1, "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_1, "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_1, "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_1, "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_1, "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+                <div name="minimatrix">
+                    <h4>Decreases use of services</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_1, "1"%>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_1, "2"%>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_1, "3"%>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_1, "4"%>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_1, "5"%>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+                <div name="minimatrix">
+                    <h4>Decreases collaboration</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_1,  "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_1, "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_1, "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_1, "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_1, "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+
+                <div name="minimatrix">
+                    <h4>Decreases trust in the system</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_1, "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_1, "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_1, "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_1, "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_1, "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+                <div name="minimatrix">
+                    <h4>Decreases efficiency</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_1,  "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_1,  "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_1,  "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_1,  "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_1,  "5" %>
+                      <p>Completely</p>
+                    </div>
+                 </div>
+
+              </div>
+<!-- two -->
+              <div id="matrix_two" >
+                    <h3 id="selection_q4_1"></h3>
+                <div name="minimatrix">
+                    <h4>Increases Costs</h4>
+                    <div class="answer">
+                      <%= f.radio_button :incraesesCosts4_2,  "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :incraesesCosts4_2,  "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :incraesesCosts4_2,  "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :incraesesCosts4_2,  "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :incraesesCosts4_2,  "5"%>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+                  <div name="minimatrix">
+                    <h4>Decreases service availability</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesAvailability4_2, "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesAvailability4_2, "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesAvailability4_2, "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesAvailability4_2, "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesAvailability4_2, "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+                  <div name="minimatrix">
+                    <h4>Decreases service quality</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_2, "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_2, "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_2, "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_2, "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_2, "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+                  <div name="minimatrix">
+                    <h4>Decreases use of services</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_2, "1"%>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_2, "2"%>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_2, "3"%>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_2, "4"%>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_2, "5"%>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+                  <div name="minimatrix">
+                    <h4>Decreases collaboration</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_2,  "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_2, "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_2,  "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_2, "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_2,  "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+                  <div name="minimatrix">
+                    <h4>Decreases trust in the system</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_2, "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_2, "2"%>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_2, "3"%>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_2, "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_2, "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+                  <div name="minimatrix">
+                    <h4>Decreases efficiency</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_2, "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_2,  "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_2, "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_2,  "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_2,  "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+
+<!-- THREE -->
+                <div id="matrix_three" >
+                    <h3 id="selection_q4_2"></h3>
+                  <div name="minimatrix">
+                    <h4>Increases Costs</h4>
+                    <div class="answer">
+                      <%= f.radio_button :incraesesCosts4_3,  "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :incraesesCosts4_3,  "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :incraesesCosts4_3,  "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :incraesesCosts4_3,  "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :incraesesCosts4_3,  "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+
+                  <div name="minimatrix">
+                    <h4>Decreases service availability</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesAvailability4_3,  "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesAvailability4_3, "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesAvailability4_3, "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesAvailability4_3, "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesAvailability4_3, "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+
+                  <div name="minimatrix">
+                    <h4>Decreases service quality</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_3, "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_3, "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_3, "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_3, "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesQuality4_3, "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+
+                  <div name="minimatrix">
+                    <h4>Decreases use of services</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_3, "1"%>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_3,"2"%>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_3, "3"%>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_3, "4"%>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesUse4_3, "5"%>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+                  <div name="minimatrix">
+                    <h4>Decreases collaboration</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_3,  "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_3,  "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_3,  "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_3,  "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesCollaboration4_3,  "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+                  <div name="minimatrix">
+                    <h4>Decreases trust in the system</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_3, "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_3, "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_3, "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_3, "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesTrust4_3, "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+                  <div name="minimatrix">
+                    <h4>Decreases efficiency</h4>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_3,  "1" %>
+                      <p>Not at All</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_3,  "2" %>
+                      <p>A Little</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_3,  "3" %>
+                      <p>Somewhat</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_3, "4" %>
+                      <p>A Lot</p>
+                    </div>
+                    <div class="answer">
+                      <%= f.radio_button :decreasesEfficiency4_3, "5" %>
+                      <p>Completely</p>
+                    </div>
+                  </div>
+
+                  </div>
+              </div>
+<!-- END -->
+
+<!-- QUESTION 5-->
+  <div id="question_five" class="question-container multi-select">
+    <h2>
+        From this list, which solutions would you personally invest in? Choose three.
+    </h2>
+    <div class="field">
+      <div class="answer">
+        <%= f.check_box :comparativeTools5, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+        <p>Comparative tools for existing healthcare quality and costs / Payment estimation tools</p>
+      </div>
+      <div class="answer">
+        <%= f.check_box :eduationTraining5, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+        <p>Education/Training tools</p>
+      </div>
+      <div class="answer">
+        <%= f.check_box :standardizingTracking5, {:class => "myclass", :style => "mystyle"},1,0 %>
+        <p>Standardizing and tracking systems</p>
+      </div>
+      <div class="answer">
+        <%= f.check_box :digitalAccess5, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+        <p>Digital access - EHS (electronic health records) / Doctor communication / Mobile health monitoring</p>
+      </div>
+      <div class="answer">
+        <%= f.check_box :diagnosticErrors5, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+        <p>Learning from diagnostic errors/malpractice</p>
+      </div>
+      <div class="answer">
+        <%= f.check_box :wearableTech5, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+        <p>Wearable tech/sensors</p>
+      </div>
+      <div class="answer">
+        <%= f.check_box :blockchain5, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+        <p>Blockchain / distributed ledger for privacy and access issues - EHS (electronic health records)</p>
+      </div>
+      <div class="answer">
+        <%= f.check_box :valuebasedPayment5, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+        <p>Value-based payment - back end payment sharing tools</p>
+      </div>
+      <div class="answer">
+        <%= f.check_box :collaboration5, {:class => "myclass", :style => "mystyle"}, 1,0 %>
+        <p>Expert collaboration, crowd sourced decision support</p>
+      </div>
+    </div>
+    </div>
+
+<!-- QUESTION 6-->
+        <div id="question_six" class="question-container matrix" >
+              <h2>
+                  For each of the solutions you identified, who do you expect to develop them?
+              </h2>
+              <div id="matrix_one">
+                  <h3 id="selection_q6_0"></h3>
+                  <div class="answer">
+                    <%= f.radio_button :q6_1,  "existingCompanies" %>
+                    <p>Existing Companies</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q6_1, "consultancies" %>
+                    <p>Consultancies</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q6_1, "newStartupsIncubators" %>
+                    <p>New Startups / Incubators</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q6_1, "Hackathons"%>
+                    <p>Hackathons</p>
+                  </div>
+            </div>
+
+              <div id="matrix_two" >
+                  <h3 id="selection_q6_1"></h3>
+                  <div class="answer">
+                    <%= f.radio_button :q6_2,  "existingCompanies" %>
+                    <p>Existing Companies</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q6_2, "consultancies" %>
+                    <p>Consultancies</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q6_2, "newStartupsIncubators" %>
+                    <p>New Startups / Incubators</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q6_2, "Hackathons"%>
+                    <p>Hackathons</p>
+                  </div>
+              </div>
+
+              <div id="matrix_three" >
+                  <h3 id="selection_q6_2"></h3>
+                  <div class="answer">
+                    <%= f.radio_button :q6_3,  "existingCompanies" %>
+                    <p>Existing Companies</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q6_3, "consultancies" %>
+                    <p>Consultancies</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q6_3, "newStartupsIncubators" %>
+                    <p>New Startups / Incubators</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q6_3, "Hackathons"%>
+                    <p>Hackathons</p>
+                  </div>
+                </div>
+            </div>
+
+<!-- QUESTION 7-->
+        <div id="question_seven" class="question-container matrix" >
+              <h2>
+                  For each of the solutions you identified, who do you think would benefit the most?
+              </h2>
+              <div id="matrix_one">
+                  <h3 id="selection_q7_0"></h3>
+                  <div class="answer">
+                    <%= f.radio_button :q7_1,  "patient" %>
+                    <p>Patient</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_1,  "insuranceProvider" %>
+                    <p>Insurance Provider</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_1, "hospitalAdministrator" %>
+                    <p>Hospital Administrator</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_1, "clincian" %>
+                    <p>Clinician (physician providers / small practices)</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_1, "physician" %>
+                    <p>Physician (the individual doctors / providers)</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_1, "policymaker" %>
+                    <p>Policymaker</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_1,  "communityMember"%>
+                    <p>Community Member</p>
+                  </div>
+
+            </div>
+
+              <div id="matrix_two" >
+                  <h3 id="selection_q7_1"></h3>
+                  <div class="answer">
+                    <%= f.radio_button :q7_2,  "patient" %>
+                    <p>Patient</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_2, "insuranceProvider"%>
+                    <p>Insurance Provider</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_2, "hospitalAdministrator" %>
+                    <p>Hospital Administrator</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_2,  "clincian" %>
+                    <p>Clinician (physician providers / small practices)</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_2,  "physician" %>
+                    <p>Physician (the individual doctors / providers)</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_2, "policymaker" %>
+                    <p>Policymaker</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_2, "communityMember" %>
+                    <p>Community Member</p>
+                  </div>
+
+              </div>
+
+              <div id="matrix_three" >
+                  <h3 id="selection_q7_2"></h3>
+                  <div class="answer">
+                    <%= f.radio_button :q7_3,  "patient" %>
+                    <p>Patient</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_3, "insuranceProvider" %>
+                    <p>Insurance Provider</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_3, "hospitalAdministrator" %>
+                    <p>Hospital Administrator</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_3, "clincian"%>
+                    <p>Clinician (physician providers / small practices)</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_3,  "physician" %>
+                    <p>Physician (the individual doctors / providers)</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_3, "policymaker" %>
+                    <p>Policymaker</p>
+                  </div>
+                  <div class="answer">
+                    <%= f.radio_button :q7_3,  "communityMember" %>
+                    <p>Community Member</p>
+                  </div>
+                </div>
+            </div>
+  <div class="question-container single-select">
+      <h2>
+          What is your industry?
+      </h2>
+        <div class="field">
+          <div class="answer">
+            <%= f.radio_button :q8_1,  "marketing" %>
+            <p>Marketing / Branding</p>
+          </div>
+          <div class="answer">
+            <%= f.radio_button :q8_1, "food" %>
+            <p>Food / Nutrition</p>
+          </div>
+          <div class="answer">
+            <%= f.radio_button :q8_1, "retail" %>
+            <p>Retail Goods Market</p>
+          </div>
+          <div class="answer">
+            <%= f.radio_button :q8_1, "healthcare"%>
+            <p>Healthcare</p>
+          </div>
+          <div class="answer">
+            <%= f.radio_button :q8_1,  "softwareSystems" %>
+            <p>Software / Computer Systems</p>
+          </div>
+          <div class="answer">
+            <%= f.radio_button :q8_1, "finance" %>
+            <p>Finance</p>
+          </div>
+          <div class="answer">
+            <%= f.radio_button :q8_1,  "hospitality" %>
+            <p>Hospitality</p>
+          </div>
+          <div class="answer">
+            <%= f.radio_button :q8_1, "businessDevelopment" %>
+            <p>Business Development / Consulting</p>
+          </div>
+          <div class="answer">
+            <%= f.radio_button :q8_1, "artDesign"%>
+            <p>Art / Design</p>
+          </div>
+          <div class="answer">
+            <%= f.radio_button :q8_1,  "socialImpact" %>
+            <p>Social Impact</p>
+          </div>
+          <div class="answer">
+            <%= f.radio_button :q8_1, "education" %>
+            <p>Education</p>
+          </div>
+          <div class="answer">
+            <%= f.radio_button :q8_1, "healthcare" %>
+            <p>Healthcare / Psychology</p>
+          </div>
+          <div class="answer">
+            <%= f.radio_button :q8_1, "entertainment" %>
+            <p>Entertainment / Media</p>
+          </div>
+          <div class="answer">
+            <%= f.radio_button :q8_1, "other"%>
+            <p>Other</p>
+            <%= f.text_field :q8_2 %>
+          </div>
+        </div>
+      </div>
+<div class="question-container single-select">
+  <h2>
+      What department do you work for in your organization?
+  </h2>
+
+    <div class="field">
+
+              <div class="answer">
+                <%= f.radio_button :q9_1,  "executive" %>
+                <p>Executive</p>
+              </div>
+              <div class="answer">
+                <%= f.radio_button :q9_1, "marketingSales" %>
+                <p>Marketing and Sales</p>
+              </div>
+              <div class="answer">
+                <%= f.radio_button :q9_1, "accounting" %>
+                <p>Accounting</p>
+              </div>
+              <div class="answer">
+                <%= f.radio_button :q9_1, "finance"%>
+                <p>Finance</p>
+              </div>
+              <div class="answer">
+                <%= f.radio_button :q9_1,  "operationManagement" %>
+                <p>Operation Management</p>
+              </div>
+              <div class="answer">
+                <%= f.radio_button :q9_1, "strategy" %>
+                <p>Strategy</p>
+              </div>
+              <div class="answer">
+                <%= f.radio_button :q9_1,  "it" %>
+                <p>IT</p>
+              </div>
+              <div class="answer">
+                <%= f.radio_button :q9_1, "researchDevelopment" %>
+                <p>Research and Development</p>
+              </div>
+              <div class="answer">
+                <%= f.radio_button :q9_1, "legal"%>
+                <p>Legal</p>
+              </div>
+              <div class="answer">
+                <%= f.radio_button :q9_1, "other"%>
+                <p>Other</p>
+                <%= f.text_field :q9_2 %>
+              </div>
+        </div>
+  </div>
+<div class="question-container limited-multi-select">
+  <h2>
+      What role(s) do you play in your organization?
+  </h2>
+  <div class="field">
+    <div class="answer">
+      <%= f.check_box :connect10, {:class => "myclass", :style => "mystyle"}, 1 ,0 %>
+      <p>Connect people across teams</p>
+    </div>
+    <div class="answer">
+      <%= f.check_box :ideas10, {:class => "myclass", :style => "mystyle"}, 1 ,0 %>
+      <p>Bring in new ideas</p>
+    </div>
+    <div class="answer">
+      <%= f.check_box :technologies10, {:class => "myclass", :style => "mystyle"},  1 ,0 %>
+      <p>Introduce new technologies</p>
+    </div>
+    <div class="answer">
+      <%= f.check_box :implement10, {:class => "myclass", :style => "mystyle"}, 1 ,0 %>
+      <p>Implement solutions</p>
+    </div>
+    <div class="answer">
+      <%= f.check_box :improve10, {:class => "myclass", :style => "mystyle"}, 1 ,0 %>
+      <p>Improve operations</p>
+    </div>
+    <div class="answer">
+      <%= f.check_box :talent10, {:class => "myclass", :style => "mystyle"},  1 ,0 %>
+      <p>Finding new talent</p>
+    </div>
+    <div class="answer">
+      <%= f.check_box :funding10, {:class => "myclass", :style => "mystyle"}, 1 ,0 %>
+      <p>Make funding decisions</p>
+    </div>
+    <div class="answer">
+      <%= f.check_box :vision10, {:class => "myclass", :style => "mystyle"},  1 ,0 %>
+      <p>Visionary</p>
+    </div>
+    <div class="answer">
+      <%= f.check_box :collaboration10, {:class => "myclass", :style => "mystyle"},  1 ,0 %>
+      <p>Expert collaboration, crowd sourced decision support</p>
+    </div>
+    </div>
+  </div>
+
+  <div class="field question-container single-select">
+    <h2>
+        Would you like an email sent with your results?
+    </h2>
+    <div class="answer">
+      <%= f.radio_button :contact, 1 %>
+      <p>Yes</p>
+    </div>
+    <div class="answer">
+      <%= f.radio_button :contact, 0%>
+      <p>No</p>
+    </div>
+  </div>
+
+    <!--<input type="button" value="Back" onClick="history.go(-1);return true;" />-->
+    <input type="submit" action="submit" value="Submit" />
+  </form>
+
+
+<% end %>
+  </body>

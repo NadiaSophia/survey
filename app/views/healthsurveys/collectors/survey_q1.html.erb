@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+        <meta name="viewport" content="width=device-width, height=device-height" />
+        <title>#CreatingHealth Survey: Question 1</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src=""></script>
+    </head>
+
+    <body>
+
+    	<form action="survey_q2.html.erb">
+            <div class="question-container multi-select">
+                <h2>
+                    How do you identify yourself within the healthcare system? If more than one apply, select multiple.
+                </h2>
+                <label class="checkbox">
+                    <input type="checkbox" value="patient" name="answer"/>
+                    Patient
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="insuranceProvider" name="answer"/>
+                    Insurance Provider
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="hospitalAdministrator" name="answer"/>
+                    Hospital Administrator
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="clincian" name="answer"/>
+                    Clinician (physician providers / small practices)
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="physician" name="answer"/>
+                    Physician (the individual doctors / providers)
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="policymaker" name="answer"/>
+                    Policymaker
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="communityMember" name="answer"/>
+                    Community Member
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="other" name="answer"/>
+                    Other
+                    <input id='other-text' placeholder='Add Option' type='text' />
+                </label>
+            </div>
+
+            <input type="button" value="Back" onClick="history.go(-1);return true;" />
+            <input type="submit" value="Next" />
+		</form>
+
+    </body>
+    <script>
+    	// Add text input to other checkbox when selected
+    	// http://jsfiddle.net/hungerpain/KqRpM/
+	</script>
+
+</html>

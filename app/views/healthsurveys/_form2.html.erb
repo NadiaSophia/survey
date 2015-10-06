@@ -1,0 +1,112 @@
+<%= form_for(@healthsurvey) do |f| %>
+  <% if @healthsurvey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@healthsurvey.errors.count, "error") %> prohibited this healthsurvey from being saved:</h2>
+
+      <ul>
+      <% @healthsurvey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <head>
+      <meta charset=utf-8 />
+      <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+      <meta name="viewport" content="width=device-width, height=device-height" />
+      <title>#CreatingHealth Survey</title>
+      <link href="css/style.css" rel="stylesheet" />
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script type="text/javascript" src="js/report.js"></script>
+  </head>
+
+  <body>
+  </script>
+
+</body
+<div class="question-container limited-multi-select">
+  <h2>
+    Which of these issues do you believe will most affect healthcare? Choose up to three.
+  </h2>
+  <div class="field">
+    <%= f.check_box :q2_1, {:class => "myclass", :style => "mystyle"}, "competition", "nil" %>
+    Competition between existing healthcare providers
+    <%= f.check_box :q2_2, {:class => "myclass", :style => "mystyle"}, "lackOfEducation", "nil" %>
+    Lack of education
+    <%= f.check_box :q2_3, {:class => "myclass", :style => "mystyle"}, "incongruentSystems", "nil" %>
+    Incongruent systems and loss of tracking
+    <%= f.check_box :q2_4, {:class => "myclass", :style => "mystyle"}, "poorCommunication", "nil" %>
+    Poor communication and access between physicians and patients
+    <%= f.check_box :q2_5, {:class => "myclass", :style => "mystyle"}, "diagnosticErrors", "nil" %>
+    Diagnostic errors and recurring malpractice
+    <%= f.check_box :q2_6, {:class => "myclass", :style => "mystyle"}, "inefficientTracking", "nil" %>
+    Inefficient health tracking and lack of consistency
+    <%= f.check_box :q2_7, {:class => "myclass", :style => "mystyle"}, "privacy", "nil" %>
+    Privacy and access to health records
+    <%= f.check_box :q2_8, {:class => "myclass", :style => "mystyle"}, "valuebasedPaymentSystems", "nil" %>
+    Emerging value-based payment systems
+    <%= f.check_box :q2_9, {:class => "myclass", :style => "mystyle"}, "disconnectBetweenSystems", "nil" %>
+    Disconnect between the public and health systems
+    other
+    <%= f.text_field :q2_10 %>
+  </div>
+    <input type="button" value="Back" onClick="history.go(-1);return true;" />
+    <input type="submit" value="Begin Survey" />
+  </form>
+</form>
+</div>
+<div class="field">
+
+</div>
+<form  class="question-container limited-multi-select" action="">
+    <h2>
+        Which of these issues do you believe will most affect healthcare? Choose up to three.
+    </h2>
+    <label class="checkbox">
+        <input type="checkbox" value="competition" name="answer"/>
+        Competition between existing healthcare providers
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" value="lackOfEducation" name="answer"/>
+        Lack of education
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" value="incongruentSystems" name="answer"/>
+        Incongruent systems and loss of tracking
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" value="poorCommunication" name="answer"/>
+        Poor communication and access between physicians and patients
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" value="diagnosticErrors" name="answer"/>
+        Diagnostic errors and recurring malpractice
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" value="inefficientTracking" name="answer"/>
+        Inefficient health tracking and lack of consistency
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" value="privacy" name="answer"/>
+        Privacy and access to health records
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" value="valuebasedPaymentSystems" name="answer"/>
+        Emerging value-based payment systems
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" value="disconnectBetweenSystems" name="answer"/>
+        Disconnect between the public and health systems
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" value="other" name="answer"/>
+        Other
+        <input id='other-text' placeholder='Add Option' type='text' />
+    </label>
+
+    <input type="button" value="Back" onClick="history.go(-1);return true;" />
+    <input type="submit" value="Next" />
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+      <% end %>

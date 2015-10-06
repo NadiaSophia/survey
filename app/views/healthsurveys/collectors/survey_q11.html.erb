@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+        <meta name="viewport" content="width=device-width, height=device-height" />
+        <title>#CreatingHealth Survey: Question 10</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src=""></script>
+    </head>
+
+    <body>
+
+    	<form action="results.html.erb">
+            <div class="question-container single-select">
+                <h2>
+                    Are you interested in seeing the analysis of your survey data? We will email the results at a later date.
+                </h2>
+                <label class="radio">
+                    <input type="radio" value="yes" name="answer"/>
+                    Yes
+                </label>
+                <label class="radio">
+                    <input type="radio" value="no" name="answer"/>
+                    No
+                </label>
+            </div>
+
+            <input type="button" value="Back" onClick="history.go(-1);return true;" />
+            <input type="submit" value="Next" />
+		</form>
+
+    </body>
+    <script>
+    	// Add text input to other checkbox when selected
+    	// http://jsfiddle.net/hungerpain/KqRpM/
+	</script>
+
+</html>

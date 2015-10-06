@@ -1,0 +1,131 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ *{
+ 	margin: 0;
+ 	padding: 0;
+ }
+
+ body{
+ 	max-width: 900px;
+ 	padding: 20px;
+ 	margin-left: auto;
+ 	margin-right: auto;
+
+ 	font-family: sans-serif;
+ }
+
+ /************* QUESTIONS *************/
+
+ .question-container{
+ }
+
+ h1{
+   margin-bottom: 20px;
+ }
+
+ .question-container h2{
+ 	margin-top: 30px;
+  margin-bottom: 10px;
+ }
+ .question-container h3{
+   margin-top: 20px;
+   margin-bottom: 10px;
+ }
+
+ .question-text{
+ 	margin-bottom: 15px;
+
+ 	font-size: 18px;
+ 	font-weight: bold;
+ }
+
+ .multi-select .answer, .single-select .answer, .limited-multi-select .answer, .matrix .answer{
+ 	width: 100%;
+  margin-bottom: 10px;
+
+ 	display: inline-block;
+
+ 	font-size: 13px;
+ 	color: #333;
+ }
+.multi-select p, .single-select p, .limited-multi-select p, .matrix p{
+  display: inline-block;
+  clear: right;
+}
+
+ .matrix_option{
+ 	margin-top: 15px;
+ 	margin-bottom: 3px;
+ }
+
+ input{
+ 	margin-right: 5px;
+ }
+
+ #other-text{
+ 	margin-right: 10px;
+ }
+
+
+
+ /************* RESULTS *************/
+
+ /* http://viralpatel.net/blogs/create-accordion-menu-jquery/ */
+ #accordion {
+     list-style: none;
+     padding: 0 0 0 0;
+     width: 100%;
+ }
+ #accordion li ul{
+ 	width: 100%;
+ 	margin-right: auto;
+ 	margin-left: auto;
+ 	background-color: #ccc;
+ }
+ #accordion > li > div {
+ 	min-height: 40px;
+     margin: 0;
+     padding: 10px;
+     display: block;
+
+     font-weight: bold;
+     cursor: pointer;
+     list-style: none;
+     background-color: #eee;
+     border-bottom: 1px solid #aaa;
+ }
+ #accordion > li > ul > li {
+ 	height: auto;
+ }
+ #accordion ul {
+     width: 100%;
+     padding: 0 0 0 0;
+     list-style: none;
+ }
+ #accordion ul li {
+ 	padding: 10px 0;
+     font-weight: normal;
+     cursor: auto;
+     background-color: #fff;
+     border-bottom: 1px solid #aaa;
+ }
+ #accordion a {
+     text-decoration: none;
+ }
+ #accordion a:hover {
+     text-decoration: underline;
+ }

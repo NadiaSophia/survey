@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+        <meta name="viewport" content="width=device-width, height=device-height" />
+        <title>#CreatingHealth Survey: Question 8</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src=""></script>
+    </head>
+
+    <body>
+
+    	<form action="survey_q9.html.erb">
+            <div class="question-container multi-select">
+                <h2>
+                    What is your industry?
+                </h2>
+                <label class="radio">
+                    <input type="radio" value="marketing" name="answer"/>
+                    Marketing/Branding
+                </label>
+                <label class="radio">
+                    <input type="radio" value="food" name="answer"/>
+                    Food/Nutrition
+                </label>
+                <label class="radio">
+                    <input type="radio" value="retail" name="answer"/>
+                    Retail Goods Market
+                </label>
+                <label class="radio">
+                    <input type="radio" value="healthcare" name="answer"/>
+                    Healthcare/Psychology
+                </label>
+                <label class="radio">
+                    <input type="radio" value="softwareSystems" name="answer"/>
+                    Software/Computer systems
+                </label>
+                <label class="radio">
+                    <input type="radio" value="hospitality" name="answer"/>
+                    Hospitality
+                </label>
+                <label class="radio">
+                    <input type="radio" value="finance" name="answer"/>
+                    Finance
+                </label>
+                <label class="radio">
+                    <input type="radio" value="businessDevelopment" name="answer"/>
+                    Business Development/Consulting
+                </label>
+                <label class="radio">
+                    <input type="radio" value="entertainment" name="answer"/>
+                    Entertainment/Media
+                </label>
+                <label class="radio">
+                    <input type="radio" value="artDesign" name="answer"/>
+                    Art/Design
+                </label>
+                <label class="radio">
+                    <input type="radio" value="socialImpact" name="answer"/>
+                    Social Impact
+                </label>
+                <label class="radio">
+                    <input type="radio" value="education" name="answer"/>
+                    Education
+                </label>
+                <label class="radio">
+                    <input type="radio" value="other" name="answer"/>
+                    Other
+                    <input id='other-text' placeholder='Add Option' type='text' />
+                </label>
+            </div>
+
+            <input type="button" value="Back" onClick="history.go(-1);return true;" />
+            <input type="submit" value="Next" />
+		</form>
+
+    </body>
+    <script>
+    	// Add text input to other checkbox when selected
+    	// http://jsfiddle.net/hungerpain/KqRpM/
+	</script>
+
+</html>

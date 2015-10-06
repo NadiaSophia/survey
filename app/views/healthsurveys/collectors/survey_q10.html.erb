@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+        <meta name="viewport" content="width=device-width, height=device-height" />
+        <title>#CreatingHealth Survey: Question 10</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src=""></script>
+    </head>
+
+    <body>
+
+    	<form action="survey_q11.html.erb">
+            <div class="question-container multi-select">
+                <h2>
+                    What role(s) do you play in your organization?
+                </h2>
+                <label class="checkbox">
+                    <input type="checkbox" value="connect" name="answer"/>
+                    Connect people across teams
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="ideas" name="answer"/>
+                    Bring in new ideas
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="technologies" name="answer"/>
+                    Introduce new technologies
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="implement" name="answer"/>
+                    Implement solutions
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="improve" name="answer"/>
+                    Improve operations
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="talent" name="answer"/>
+                    Finding new talent
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="funding" name="answer"/>
+                    Make funding decisions
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="visionary" name="answer"/>
+                    Visionary
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" value="other" name="answer"/>
+                    Other
+                    <input id='other-text' placeholder='Add Option' type='text' />
+                </label>
+            </div>
+
+            <input type="button" value="Back" onClick="history.go(-1);return true;" />
+            <input type="submit" value="Next" />
+		</form>
+
+    </body>
+    <script>
+    	// Add text input to other checkbox when selected
+    	// http://jsfiddle.net/hungerpain/KqRpM/
+	</script>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+        <meta name="viewport" content="width=device-width, height=device-height" />
+        <title>#CreatingHealth Survey: Question 7</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/survey.js"></script>
+    </head>
+
+    <body>
+
+    	<form class="question-container matrix" action="survey_q8.html.erb">
+            <h2>
+                For each of the solutions you identified, who do you think would benefit the most?
+            </h2>
+            <div id="matrix_one">
+                <p>Previous Selection 1</p>
+                <label class="radio">
+                    <input type="radio" value="patient" name="answer_one"/>
+                    Patient
+                </label>
+                <label class="radio">
+                    <input type="radio" value="insuranceProvider" name="answer_one"/>
+                    Insurance Provider
+                </label>
+                <label class="radio">
+                    <input type="radio" value="hospitalAdministrator" name="answer_one"/>
+                    Hospital Administrator
+                </label>
+                <label class="radio">
+                    <input type="radio" value="clincian" name="answer_one"/>
+                    Clinician
+                </label>
+                <label class="radio">
+                    <input type="radio" value="physician" name="answer_one"/>
+                    Physician
+                </label>
+                <label class="radio">
+                    <input type="radio" value="policymaker" name="answer_one"/>
+                    Policymaker
+                </label>
+                <label class="radio">
+                    <input type="radio" value="communityMember" name="answer_one"/>
+                    Community Member
+                </label>
+                <label class="radio">
+                    <input type="radio" value="other" name="answer_one"/>
+                    Other
+                    <input id='other-text' placeholder='Add Option' type='text' />
+                </label>
+            </div>
+
+            <div id="matrix_two" >
+                <p>Previous Selection 2</p>
+                <label class="radio">
+                    <input type="radio" value="patient" name="answer_one"/>
+                    Patient
+                </label>
+                <label class="radio">
+                    <input type="radio" value="insuranceProvider" name="answer_one"/>
+                    Insurance Provider
+                </label>
+                <label class="radio">
+                    <input type="radio" value="hospitalAdministrator" name="answer_one"/>
+                    Hospital Administrator
+                </label>
+                <label class="radio">
+                    <input type="radio" value="clincian" name="answer_one"/>
+                    Clinician
+                </label>
+                <label class="radio">
+                    <input type="radio" value="physician" name="answer_one"/>
+                    Physician
+                </label>
+                <label class="radio">
+                    <input type="radio" value="policymaker" name="answer_one"/>
+                    Policymaker
+                </label>
+                <label class="radio">
+                    <input type="radio" value="communityMember" name="answer_one"/>
+                    Community Member
+                </label>
+                <label class="radio">
+                    <input type="radio" value="other" name="answer_one"/>
+                    Other
+                    <input id='other-text' placeholder='Add Option' type='text' />
+                </label>
+            </div>
+
+            <div id="matrix_three" >
+                <p>Previous Selection 3</p>
+                <label class="radio">
+                    <input type="radio" value="patient" name="answer_one"/>
+                    Patient
+                </label>
+                <label class="radio">
+                    <input type="radio" value="insuranceProvider" name="answer_one"/>
+                    Insurance Provider
+                </label>
+                <label class="radio">
+                    <input type="radio" value="hospitalAdministrator" name="answer_one"/>
+                    Hospital Administrator
+                </label>
+                <label class="radio">
+                    <input type="radio" value="clincian" name="answer_one"/>
+                    Clinician (physician providers / small practices)
+                </label>
+                <label class="radio">
+                    <input type="radio" value="physician" name="answer_one"/>
+                    Physician (the individual doctors / providers)
+                </label>
+                <label class="radio">
+                    <input type="radio" value="policymaker" name="answer_one"/>
+                    Policymaker
+                </label>
+                <label class="radio">
+                    <input type="radio" value="communityMember" name="answer_one"/>
+                    Community Member
+                </label>
+                <label class="radio">
+                    <input type="radio" value="other" name="answer_one"/>
+                    Other
+                    <input id='other-text' placeholder='Add Option' type='text' />
+                </label>
+            </div>
+
+            <input type="button" value="Back" onClick="history.go(-1);return true;" />
+            <input type="submit" value="Next" />
+		</form>
+
+
+
+    </body>
+    <script>
+    	// Add text input to other checkbox when selected
+    	// http://jsfiddle.net/hungerpain/KqRpM/
+	</script>
+
+</html>

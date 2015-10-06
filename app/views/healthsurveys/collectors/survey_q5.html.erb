@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+        <meta name="viewport" content="width=device-width, height=device-height" />
+        <title>#CreatingHealth Survey: Question 5</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/survey.js"></script>
+    </head>
+
+    <body>
+
+    	<form  class="question-container limited-multi-select" action="survey_q6.html.erb">
+            <h2>
+                From this list, which solutions would you personally invest in? Choose up to three.
+            </h2>
+            <label class="checkbox">
+                <input type="checkbox" value="comparativeTools" name="answer"/>
+                Comparative tools for existing healthcare quality and costs / Payment estimation tools
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="eduationTraining" name="answer"/>
+                Education/Training tools
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="standardizingTracking" name="answer"/>
+                Standardizing and tracking systems
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="digitalAccess" name="answer"/>
+                Digital access - EHS (electronic health records) / Doctor communication / Mobile health monitoring
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="diagnosticErrors" name="answer"/>
+                Learning from diagnostic errors/malpractice
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="wearableTech" name="answer"/>
+                Wearable tech/sensors
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="blockchain" name="answer"/>
+                Blockchain / distributed ledger for privacy and access issues - EHS (electronic health records)
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="valuebasedPayment" name="answer"/>
+                Value-based payment - back end payment sharing tools
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="collaboration" name="answer"/>
+                Expert collaboration, crowd sourced decision support
+            </label>
+
+            <input type="button" value="Back" onClick="history.go(-1);return true;" />
+            <input type="submit" value="Next" />
+		</form>
+
+    </body>
+    <script>
+    	// Add text input to other checkbox when selected
+    	// http://jsfiddle.net/hungerpain/KqRpM/
+	</script>
+
+</html>

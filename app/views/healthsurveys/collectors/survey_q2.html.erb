@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+        <meta name="viewport" content="width=device-width, height=device-height" />
+        <title>#CreatingHealth Survey: Question 2</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/survey.js"></script>
+    </head>
+
+    <body>
+
+    	<form  class="question-container limited-multi-select" action="survey_q3.html.erb">
+            <h2>
+                Which of these issues do you believe will most affect healthcare? Choose up to three.
+            </h2>
+            <label class="checkbox">
+                <input type="checkbox" value="competition" name="answer"/>
+                Competition between existing healthcare providers
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="lackOfEducation" name="answer"/>
+                Lack of education
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="incongruentSystems" name="answer"/>
+                Incongruent systems and loss of tracking
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="poorCommunication" name="answer"/>
+                Poor communication and access between physicians and patients
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="diagnosticErrors" name="answer"/>
+                Diagnostic errors and recurring malpractice
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="inefficientTracking" name="answer"/>
+                Inefficient health tracking and lack of consistency
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="privacy" name="answer"/>
+                Privacy and access to health records
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="valuebasedPaymentSystems" name="answer"/>
+                Emerging value-based payment systems
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="disconnectBetweenSystems" name="answer"/>
+                Disconnect between the public and health systems
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="other" name="answer"/>
+                Other
+                <input id='other-text' placeholder='Add Option' type='text' />
+            </label>
+
+            <input type="button" value="Back" onClick="history.go(-1);return true;" />
+            <input type="submit" value="Next" />
+		</form>
+
+    </body>
+    <script>
+    	// Add text input to other checkbox when selected
+    	// http://jsfiddle.net/hungerpain/KqRpM/
+	</script>
+
+</html>

@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+        <meta name="viewport" content="width=device-width, height=device-height" />
+        <title>#CreatingHealth Survey: Results</title>
+        <!--<link href="css/style.css" rel="stylesheet" />-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript" src="../../assets/javascripts/results.js"></script>
+    </head>
+
+
+    <body>
+<!--
+        <div class="testing">
+            <div id="chart_div_one">test</div>
+            <div id="chart_div_two">test</div>
+            <div>test</div>
+        </div>
+-->
+
+        <form action="index.html">
+            <input type="submit" value="Done" />
+        </form>
+
+        <ul id="accordion">
+<!-- Q1 -->
+            <li>
+                <div>
+                    How do you identify yourself within the healthcare system? If more than one apply, select multiple.
+                </div>
+                <ul>
+                    <li id="chart_div_one"></li>
+                </ul>
+            </li>
+<!-- Q2 -->
+            <li>
+                <div>
+                    Which of these issues do you believe will most affect healthcare? Choose up to three.
+                </div>
+                <ul>
+                    <li id="chart_div_two"></li>
+                </ul>
+            </li>
+<!-- Q3 -->
+            <li>
+                <div>
+                     For each of the issues you identified, who is the most affected?
+                </div>
+                <ul>
+                    <li id="chart_div_three_a"></li>
+                    <li id="chart_div_three_b"></li>
+                    <li id="chart_div_three_c"></li>
+                </ul>
+            </li>
+<!-- Q4 -->
+            <li>
+                <div>
+                     For each of the issues you identified, rate them on the following:
+                </div>
+                <ul>
+                    <li id="chart_div_four_a"></li>
+                    <li id="chart_div_four_b"></li>
+                    <li id="chart_div_four_c"></li>
+                </ul>
+            </li>
+<!-- Q5 -->
+            <li>
+                <div>
+                     From this list, which solutions would you personally invest in? Choose up to three.
+                </div>
+                <ul>
+                    <li id="chart_div_five"></li>
+                </ul>
+            </li>
+<!-- Q6 -->
+            <li>
+                <div>
+                     For each of the solutions you identified, who do you expect to develop them?
+                </div>
+                <ul>
+                    <li id="chart_div_six_a"></li>
+                    <li id="chart_div_six_b"></li>
+                    <li id="chart_div_six_c"></li>
+                </ul>
+            </li>
+<!-- Q7 -->
+            <li>
+                <div>
+                    For each of the solutions you identified, who do you think would benefit the most?
+                </div>
+                <ul>
+                    <li id="chart_div_seven_a"></li>
+                    <li id="chart_div_seven_b"></li>
+                    <li id="chart_div_seven_c"></li>
+                </ul>
+            </li>
+        </ul>
+
+
+
+    </body>
+    <script>
+
+	</script>
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @healthsurvey.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @healthsurvey.email %>
+</p>
+
+<hr>
+
+<p>
+  <!--<div id="results_test" class="result">123</div>-->
+
+<!-- Q1 Results -->
+<div id="results_q1_1" class="result"><%= Healthsurvey.sum(:patient1)%></div>
+<div id="results_q1_2" class="result"><%= Healthsurvey.sum(:insuranceProvider1)%></div>
+<div id="results_q1_3" class="result"><%= Healthsurvey.sum(:hospitalAdministrator1)%></div>
+<div id="results_q1_4" class="result"><%= Healthsurvey.sum(:clincian1)%></div>
+<div id="results_q1_5" class="result"><%= Healthsurvey.sum(:physician1)%></div>
+<div id="results_q1_6" class="result"><%= Healthsurvey.sum(:policymaker1)%></div>
+<div id="results_q1_7" class="result"><%= Healthsurvey.sum(:communityMember1)%></div>
+<div id="results_q1_8" class="result"><%= Healthsurvey.sum(:other1)%></div>
+
+<!-- Q2 Results -->
+<div id="results_q2_1" class="result"><%= Healthsurvey.sum(:competition2)%></div>
+<div id="results_q2_2" class="result"><%= Healthsurvey.sum(:lackOfEducation2)%></div>
+<div id="results_q2_3" class="result"><%= Healthsurvey.sum(:incongruentSystems2)%></div>
+<div id="results_q2_4" class="result"><%= Healthsurvey.sum(:poorCommunication2)%></div>
+<div id="results_q2_5" class="result"><%= Healthsurvey.sum(:diagnosticErrors2)%></div>
+<div id="results_q2_6" class="result"><%= Healthsurvey.sum(:inefficientTracking2)%></div>
+<div id="results_q2_7" class="result"><%= Healthsurvey.sum(:privacy2)%></div>
+<div id="results_q2_8" class="result"><%= Healthsurvey.sum(:valuebasedPaymentSystems2)%></div>
+<div id="results_q2_9" class="result"><%= Healthsurvey.sum(:disconnectBetweenSystems2)%></div>
+<div id="results_q2_10" class="result"><%= Healthsurvey.sum(:other2)%></div>
+
+<!-- Q3 Results -->
+<div id="results_q3_1_1" class="result"><%= Healthsurvey.where("q3_1 = 'patient'", params[:q3_1]).count%></div>
+<div id="results_q3_1_2" class="result"><%= Healthsurvey.where("q3_1 = 'insuranceProvider'", params[:q3_1]).count%></div>
+<div id="results_q3_1_3" class="result"><%= Healthsurvey.where("q3_1 = 'hospitalAdministrator'", params[:q3_1]).count%></div>
+<div id="results_q3_1_4" class="result"><%= Healthsurvey.where("q3_1 = 'clincian'", params[:q3_1]).count%></div>
+<div id="results_q3_1_5" class="result"><%= Healthsurvey.where("q3_1 = 'physician'", params[:q3_1]).count%></div>
+<div id="results_q3_1_6" class="result"><%= Healthsurvey.where("q3_1 = 'policymaker'", params[:q3_1]).count%></div>
+<div id="results_q3_1_7" class="result"><%= Healthsurvey.where("q3_1 = 'communityMember'", params[:q3_1]).count%></div>
+
+<div id="results_q3_2_1" class="result"><%= Healthsurvey.where("q3_2 = 'patient'", params[:q3_2]).count%></div>
+<div id="results_q3_2_2" class="result"><%= Healthsurvey.where("q3_2 = 'insuranceProvider'", params[:q3_2]).count%></div>
+<div id="results_q3_2_3" class="result"><%= Healthsurvey.where("q3_2 = 'hospitalAdministrator'", params[:q3_2]).count%></div>
+<div id="results_q3_2_4" class="result"><%= Healthsurvey.where("q3_2 = 'clincian'", params[:q3_2]).count%></div>
+<div id="results_q3_2_5" class="result"><%= Healthsurvey.where("q3_2 = 'physician'", params[:q3_2]).count%></div>
+<div id="results_q3_2_6" class="result"><%= Healthsurvey.where("q3_2 = 'policymaker'", params[:q3_2]).count%></div>
+<div id="results_q3_2_7" class="result"><%= Healthsurvey.where("q3_2 = 'communityMember'", params[:q3_2]).count%></div>
+
+<div id="results_q3_3_1" class="result"><%= Healthsurvey.where("q3_3 = 'patient'", params[:q3_3]).count%></div>
+<div id="results_q3_3_2" class="result"><%= Healthsurvey.where("q3_3 = 'insuranceProvider'", params[:q3_3]).count%></div>
+<div id="results_q3_3_3" class="result"><%= Healthsurvey.where("q3_3 = 'hospitalAdministrator'", params[:q3_3]).count%></div>
+<div id="results_q3_3_4" class="result"><%= Healthsurvey.where("q3_3 = 'clincian'", params[:q3_3]).count%></div>
+<div id="results_q3_3_5" class="result"><%= Healthsurvey.where("q3_3 = 'physician'", params[:q3_3]).count%></div>
+<div id="results_q3_3_6" class="result"><%= Healthsurvey.where("q3_3 = 'policymaker'", params[:q3_3]).count%></div>
+<div id="results_q3_3_7" class="result"><%= Healthsurvey.where("q3_3 = 'communityMember'", params[:q3_3]).count%></div>
+
+
+<!-- Q4 Results -->
+self
+<div id="results_q4_1self_1" class="result"><%= @healthsurvey.incraesesCosts4_1 %></div>
+<div id="results_q4_1self_2" class="result"><%= @healthsurvey.decreasesAvailability4_1 %></div>
+<div id="results_q4_1self_3" class="result"><%= @healthsurvey.decreasesQuality4_1 %></div>
+<div id="results_q4_1self_4" class="result"><%= @healthsurvey.decreasesUse4_1 %></div>
+<div id="results_q4_1self_5" class="result"><%= @healthsurvey.decreasesCollaboration4_1 %></div>
+<div id="results_q4_1self_6" class="result"><%= @healthsurvey.decreasesTrust4_1 %></div>
+<div id="results_q4_1self_7" class="result"><%= @healthsurvey.decreasesEfficiency4_1 %></div>
+
+<div id="results_q4_2self_1" class="result"><%= @healthsurvey.incraesesCosts4_2 %></div>
+<div id="results_q4_2self_2" class="result"><%= @healthsurvey.decreasesAvailability4_2 %></div>
+<div id="results_q4_2self_3" class="result"><%= @healthsurvey.decreasesQuality4_2 %></div>
+<div id="results_q4_2self_4" class="result"><%= @healthsurvey.decreasesUse4_2 %></div>
+<div id="results_q4_2self_5" class="result"><%= @healthsurvey.decreasesCollaboration4_2 %></div>
+<div id="results_q4_2self_6" class="result"><%= @healthsurvey.decreasesTrust4_2 %></div>
+<div id="results_q4_2self_7" class="result"><%= @healthsurvey.decreasesEfficiency4_2 %></div>
+
+<div id="results_q4_3self_1" class="result"><%= @healthsurvey.incraesesCosts4_3 %></div>
+<div id="results_q4_3self_2" class="result"><%= @healthsurvey.decreasesAvailability4_3 %></div>
+<div id="results_q4_3self_3" class="result"><%= @healthsurvey.decreasesQuality4_3 %></div>
+<div id="results_q4_3self_4" class="result"><%= @healthsurvey.decreasesUse4_3 %></div>
+<div id="results_q4_3self_5" class="result"><%= @healthsurvey.decreasesCollaboration4_3 %></div>
+<div id="results_q4_3self_6" class="result"><%= @healthsurvey.decreasesTrust4_3 %></div>
+<div id="results_q4_3self_7" class="result"><%= @healthsurvey.decreasesEfficiency4_3 %></div>
+group
+
+<div id="results_incraesesCosts4_1_1" class="result"><%= Healthsurvey.average(:incraesesCosts4_1)%></div>
+<div id="results_decreasesAvailability4_1_2" class="result"><%= Healthsurvey.average(:decreasesAvailability4_1)%></div>
+<div id="results_decreasesQuality4_1_3" class="result"><%= Healthsurvey.average(:decreasesQuality4_1)%></div>
+<div id="results_decreasesUse4_1_4" class="result"><%= Healthsurvey.average(:decreasesUse4_1)%></div>
+<div id="results_decreasesCollaboration4_1_5" class="result"><%= Healthsurvey.average(:decreasesCollaboration4_1)%></div>
+<div id="results_decreasesTrust4_1_6" class="result"><%= Healthsurvey.average(:decreasesTrust4_1)%></div>
+<div id="results_decreasesEfficiency4_1_7" class="result"><%= Healthsurvey.average(:decreasesEfficiency4_1)%></div>
+
+<div id="results_incraesesCosts4_2_1" class="result"><%= Healthsurvey.average(:incraesesCosts4_2)%></div>
+<div id="results_decreasesAvailability4_2_2" class="result"><%= Healthsurvey.average(:decreasesAvailability4_2)%></div>
+<div id="results_decreasesQuality4_2_3" class="result"><%= Healthsurvey.average(:decreasesQuality4_2)%></div>
+<div id="results_decreasesUse4_2_4" class="result"><%= Healthsurvey.average(:decreasesUse4_2)%></div>
+<div id="results_decreasesCollaboration4_2_5" class="result"><%= Healthsurvey.average(:decreasesCollaboration4_2)%></div>
+<div id="results_decreasesTrust4_2_6" class="result"><%= Healthsurvey.average(:decreasesTrust4_2)%></div>
+<div id="results_decreasesEfficiency4_2_7" class="result"><%= Healthsurvey.average(:decreasesEfficiency4_2)%></div>
+
+<div id="results_incraesesCosts4_3_1" class="result"><%= Healthsurvey.average(:incraesesCosts4_3)%></div>
+<div id="results_decreasesAvailability4_3_2" class="result"><%= Healthsurvey.average(:decreasesAvailability4_3)%></div>
+<div id="results_decreasesQuality4_3_3" class="result"><%= Healthsurvey.average(:decreasesQuality4_3)%></div>
+<div id="results_decreasesUse4_3_4" class="result"><%= Healthsurvey.average(:decreasesUse4_3)%></div>
+<div id="results_decreasesCollaboration4_3_5" class="result"><%= Healthsurvey.average(:decreasesCollaboration4_3)%></div>
+<div id="results_decreasesTrust4_3_6" class="result"><%= Healthsurvey.average(:decreasesTrust4_3)%></div>
+<div id="results_decreasesEfficiency4_3_7" class="result"><%= Healthsurvey.average(:decreasesEfficiency4_3)%></div>
+
+<!-- Q5 Results -->
+<div id="results_q5_1" class="result"><%= Healthsurvey.sum(:comparativeTools5)%></div>
+<div id="results_q5_2" class="result"><%= Healthsurvey.sum(:eduationTraining5)%></div>
+<div id="results_q5_3" class="result"><%= Healthsurvey.sum(:standardizingTracking5)%></div>
+<div id="results_q5_4" class="result"><%= Healthsurvey.sum(:digitalAccess5)%></div>
+<div id="results_q5_5" class="result"><%= Healthsurvey.sum(:diagnosticErrors5)%></div>
+<div id="results_q5_6" class="result"><%= Healthsurvey.sum(:wearableTech5)%></div>
+<div id="results_q5_7" class="result"><%= Healthsurvey.sum(:blockchain5)%></div>
+<div id="results_q5_8" class="result"><%= Healthsurvey.sum(:valuebasedPayment5)%></div>
+<div id="results_q5_9" class="result"><%= Healthsurvey.sum(:collaboration5)%></div>d
+
+<!-- Q6 Results -->
+<div id="results_q6_1_1" class="result"><%= Healthsurvey.where("q6_1 = 'existingCompanies'", params[:q6_1]).count%></div>
+<div id="results_q6_1_2" class="result"><%= Healthsurvey.where("q6_1 = 'consultancies'", params[:q6_1]).count%></div>
+<div id="results_q6_1_3" class="result"><%= Healthsurvey.where("q6_1 = 'newStartupsIncubators'", params[:q6_1]).count%></div>
+<div id="results_q6_1_4" class="result"><%= Healthsurvey.where("q6_1 = 'Hackathons'", params[:q6_1]).count%></div>
+
+<div id="results_q6_2_1" class="result"><%= Healthsurvey.where("q6_2 = 'existingCompanies'", params[:q6_2]).count%></div>
+<div id="results_q6_2_2" class="result"><%= Healthsurvey.where("q6_2 = 'consultancies'", params[:q6_2]).count%></div>
+<div id="results_q6_2_3" class="result"><%= Healthsurvey.where("q6_2 = 'newStartupsIncubators'", params[:q6_2]).count%></div>
+<div id="results_q6_2_4" class="result"><%= Healthsurvey.where("q6_2 = 'Hackathons'", params[:q6_2]).count%></div>
+
+<div id="results_q6_3_1" class="result"><%= Healthsurvey.where("q6_3 = 'existingCompanies'", params[:q6_3]).count%></div>
+<div id="results_q6_3_2" class="result"><%= Healthsurvey.where("q6_3 = 'consultancies'", params[:q6_3]).count%></div>
+<div id="results_q6_3_3" class="result"><%= Healthsurvey.where("q6_3 = 'newStartupsIncubators'", params[:q6_3]).count%></div>
+<div id="results_q6_3_4" class="result"><%= Healthsurvey.where("q6_3 = 'Hackathons'", params[:q6_3]).count%></div>
+
+
+<!-- Q7 Results -->
+<div id="results_q7_1_1" class="result"><%= Healthsurvey.where("q7_1 = 'patient'", params[:q7_1]).count%></div>
+<div id="results_q7_1_2" class="result"><%= Healthsurvey.where("q7_1 = 'insuranceProvider'", params[:q7_1]).count%></div>
+<div id="results_q7_1_3" class="result"><%= Healthsurvey.where("q7_1 = 'hospitalAdministrator'", params[:q7_1]).count%></div>
+<div id="results_q7_1_4" class="result"><%= Healthsurvey.where("q7_1 = 'clincian'", params[:q7_1]).count%></div>
+<div id="results_q7_1_5" class="result"><%= Healthsurvey.where("q7_1 = 'physician'", params[:q7_1]).count%></div>
+<div id="results_q7_1_6" class="result"><%= Healthsurvey.where("q7_1 = 'policymaker'", params[:q7_1]).count%></div>
+<div id="results_q7_1_7" class="result"><%= Healthsurvey.where("q7_1 = 'communityMember'", params[:q7_1]).count%></div>
+
+<div id="results_q7_2_1" class="result"><%= Healthsurvey.where("q7_2 = 'patient'", params[:q7_2]).count%></div>
+<div id="results_q7_2_2" class="result"><%= Healthsurvey.where("q7_2 = 'insuranceProvider'", params[:q7_2]).count%></div>
+<div id="results_q7_2_3" class="result"><%= Healthsurvey.where("q7_2 = 'hospitalAdministrator'", params[:q7_2]).count%></div>
+<div id="results_q7_2_4" class="result"><%= Healthsurvey.where("q7_2 = 'clincian'", params[:q7_2]).count%></div>
+<div id="results_q7_2_5" class="result"><%= Healthsurvey.where("q7_2 = 'physician'", params[:q7_2]).count%></div>
+<div id="results_q7_2_6" class="result"><%= Healthsurvey.where("q7_2 = 'policymaker'", params[:q7_2]).count%></div>
+<div id="results_q7_2_7" class="result"><%= Healthsurvey.where("q7_2 = 'communityMember'", params[:q7_2]).count%></div>
+
+<div id="results_q7_3_1" class="result"><%= Healthsurvey.where("q7_3 = 'patient'", params[:q7_3]).count%></div>
+<div id="results_q7_3_2" class="result"><%= Healthsurvey.where("q7_3 = 'insuranceProvider'", params[:q7_3]).count%></div>
+<div id="results_q7_3_3" class="result"><%= Healthsurvey.where("q7_3 = 'hospitalAdministrator'", params[:q7_3]).count%></div>
+<div id="results_q7_3_4" class="result"><%= Healthsurvey.where("q7_3 = 'clincian'", params[:q7_3]).count%></div>
+<div id="results_q7_3_5" class="result"><%= Healthsurvey.where("q7_3 = 'physician'", params[:q7_3]).count%></div>
+<div id="results_q7_3_6" class="result"><%= Healthsurvey.where("q7_3 = 'policymaker'", params[:q7_3]).count%></div>
+<div id="results_q7_3_7" class="result"><%= Healthsurvey.where("q7_3 = 'communityMember'", params[:q7_3]).count%></div>
+
+</p>
+
+
+<%= link_to 'Edit', edit_healthsurvey_path(@healthsurvey) %> |
+<%= link_to 'Back', healthsurveys_path %>
+
+<script>
+//$(window).load(function(){
+
+console.log('show.html');
+
+  google.load('visualization', '1', {'packages':['corechart', 'bar']});
+    // Set a callback to run when the Google Visualization API is loaded.
+  //google.setOnLoadCallback(drawChart_one);
+  //google.setOnLoadCallback(drawChart_two);
+  //google.setOnLoadCallback(drawChart_three_a);
+  //google.setOnLoadCallback(drawChart_three_b);
+  //google.setOnLoadCallback(drawChart_three_c);
+  //google.setOnLoadCallback(drawChart_four_a);
+  //google.setOnLoadCallback(drawChart_four_b);
+  //google.setOnLoadCallback(drawChart_four_c);
+  //google.setOnLoadCallback(drawChart_five);
+  //google.setOnLoadCallback(drawChart_six_a);
+  //google.setOnLoadCallback(drawChart_six_b);
+  //google.setOnLoadCallback(drawChart_six_c);
+  //google.setOnLoadCallback(drawChart_seven_a);
+  //google.setOnLoadCallback(drawChart_seven_b);
+  //google.setOnLoadCallback(drawChart_seven_c);
+
+/************* CHARTS *************/
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    // https://jsfiddle.net/api/post/library/pure/
+
+
+
+
+//});
+</script>
+
+</html>

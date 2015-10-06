@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset=utf-8 />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+        <meta name="viewport" content="width=device-width, height=device-height" />
+        <title>#CreatingHealth Survey</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/report.js"></script>
+    </head>
+
+    <body>
+      <%= form_for Collector.new do |f| %>
+        <%= f.text_field :email %>
+        <%= f.submit "Create" %>
+      <% end %>
+	    <form action="survey_q1.html.erb">
+	    	<input type="submit" value="Begin Survey" />
+	    </form>
+
+    </body>
+    <script>
+
+	</script>
+
+  <!--
+  <p>
+    <strong>Q1:</strong>
+    <%= @healthsurvey.q1_2 %>
+  </p>
+  <p>
+    <strong>Q1:</strong>
+    <%= @healthsurvey.q1_3 %>
+  </p>
+  <p>
+    <strong>Q1:</strong>
+    <%= @healthsurvey.q1_4 %>
+  </p>
+  <p>
+    <strong>Q1:</strong>
+    <%= @healthsurvey.q1_5 %>
+  </p>
+  <p>
+    <strong>Q1:</strong>
+    <%= @healthsurvey.q1_6 %>
+  </p>
+  <p>
+    <strong>Q1:</strong>
+    <%= @healthsurvey.q1_7 %>
+  </p>
+  <p>
+    <strong>Q1:</strong>
+    <%= @healthsurvey.q1_8 %>
+  </p>
+
+  <hr>
+
+  <p>
+    <strong>Q2:</strong>
+    <%= @healthsurvey.q2_1 %>
+  </p>
+  <p>
+    <strong>Q2:</strong>
+    <%= @healthsurvey.q2_2 %>
+  </p><p>
+    <strong>Q2:</strong>
+    <%= @healthsurvey.q2_3 %>
+  </p><p>
+    <strong>Q2:</strong>
+    <%= @healthsurvey.q2_4 %>
+  </p><p>
+    <strong>Q2:</strong>
+    <%= @healthsurvey.q2_5 %>
+  </p><p>
+    <strong>Q2:</strong>
+    <%= @healthsurvey.q2_6 %>
+  </p><p>
+    <strong>Q2:</strong>
+    <%= @healthsurvey.q2_7 %>
+  </p><p>
+    <strong>Q2:</strong>
+    <%= @healthsurvey.q2_8 %>
+  </p><p>
+    <strong>Q2:</strong>
+    <%= @healthsurvey.q2_9 %>
+  </p><p>
+    <strong>Q2:</strong>
+    <%= @healthsurvey.q2_10 %>
+  </p>
+
+  <hr>
+
+  <p>
+    <strong>Q3 1:</strong>
+    <%= @healthsurvey.q3_1 %>
+  </p>
+
+  <p>
+    <strong>Q3 2:</strong>
+    <%= @healthsurvey.q3_2 %>
+  </p>
+
+  <p>
+    <strong>Q3 4:</strong>
+    <%= @healthsurvey.q3_3 %>
+  </p>
+
+  <hr>
+
+  <p>
+    <strong>Q4 1:</strong>
+    <%= @healthsurvey.q4_1 %>
+  </p>
+
+  <p>
+    <strong>Q4 2:</strong>
+    <%= @healthsurvey.q4_2 %>
+  </p>
+
+  <p>
+    <strong>Q4 3:</strong>
+    <%= @healthsurvey.q4_3 %>
+  </p>
+
+  <hr>
+
+  <p>
+    <strong>Q5:</strong>
+    <%= @healthsurvey.q5_1 %>
+  </p>
+  <p>
+    <strong>Q5:</strong>
+    <%= @healthsurvey.q5_2 %>
+  </p>
+  <p>
+    <strong>Q5:</strong>
+    <%= @healthsurvey.q5_3 %>
+  </p>
+  <p>
+    <strong>Q5:</strong>
+    <%= @healthsurvey.q5_4 %>
+  </p>
+  <p>
+    <strong>Q5:</strong>
+    <%= @healthsurvey.q5_5 %>
+  </p>
+  <p>
+    <strong>Q5:</strong>
+    <%= @healthsurvey.q5_6 %>
+  </p>
+  <p>
+    <strong>Q5:</strong>
+    <%= @healthsurvey.q5_7 %>
+  </p>
+  <p>
+    <strong>Q5:</strong>
+    <%= @healthsurvey.q5_8 %>
+  </p>
+  <p>
+    <strong>Q5:</strong>
+    <%= @healthsurvey.q5_9 %>
+  </p>
+
+  <hr>
+
+  <p>
+    <strong>Q6 1:</strong>
+    <%= @healthsurvey.q6_1 %>
+  </p>
+
+  <p>
+    <strong>Q6 2:</strong>
+    <%= @healthsurvey.q6_2 %>
+  </p>
+
+  <p>
+    <strong>Q6 3:</strong>
+    <%= @healthsurvey.q6_3 %>
+  </p>
+
+  <hr>
+
+  <p>
+    <strong>Q7 1:</strong>
+    <%= @healthsurvey.q7_1 %>
+  </p>
+
+  <p>
+    <strong>Q7 2:</strong>
+    <%= @healthsurvey.q7_2 %>
+  </p>
+
+  <p>
+    <strong>Q7 3:</strong>
+    <%= @healthsurvey.q7_3 %>
+  </p>
+
+  <hr>
+
+  <p>
+    <strong>Q8:</strong>
+    <%= @healthsurvey.q8_1 %>
+  </p>
+  <p>
+    <strong>Q8:</strong>
+    <%= @healthsurvey.q8_2 %>
+  </p>
+
+  <hr>
+
+  <p>
+    <strong>Q9:</strong>
+    <%= @healthsurvey.q9_1 %>
+  </p>
+  <p>
+    <strong>Q9:</strong>
+    <%= @healthsurvey.q9_2 %>
+  </p>
+
+  <hr>
+
+  <p>
+    <strong>Q10:</strong>
+    <%= @healthsurvey.q10_1 %>
+  </p>
+  <p>
+    <strong>Q10:</strong>
+    <%= @healthsurvey.q10_2 %>
+  </p>
+  <p>
+    <strong>Q10:</strong>
+    <%= @healthsurvey.q10_3 %>
+  </p>
+  <p>
+    <strong>Q10:</strong>
+    <%= @healthsurvey.q10_4 %>
+  </p>
+  <p>
+    <strong>Q10:</strong>
+    <%= @healthsurvey.q10_5 %>
+  </p>
+  <p>
+    <strong>Q10:</strong>
+    <%= @healthsurvey.q10_6 %>
+  </p>
+  <p>
+    <strong>Q10:</strong>
+    <%= @healthsurvey.q10_7 %>
+  </p>
+  <p>
+    <strong>Q10:</strong>
+    <%= @healthsurvey.q10_8 %>
+  </p>
+  <p>
+    <strong>Q10:</strong>
+    <%= @healthsurvey.q10_9 %>
+  </p>
+
+
+  <hr>
+
+  <p>
+    <strong>Contact:</strong>
+    <%= @healthsurvey.contact %>
+  </p>
+  -->
